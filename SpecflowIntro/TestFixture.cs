@@ -11,16 +11,22 @@ namespace SpecflowIntro
     {
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
 
+        [BeforeFeature]
+        public static void BeforeFeatures()
+        {
+            Console.WriteLine("Calling before features");
+        }
+        
         [BeforeScenario]
         public void BeforeScenario()
         {
-            //TODO: implement logic that has to run before executing each scenario
+            Console.WriteLine("Calling before scenario");
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            //TODO: implement logic that has to run after executing each scenario
+            Console.WriteLine("Calling after scenario");
         }
     }
 }
