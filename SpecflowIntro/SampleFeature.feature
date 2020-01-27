@@ -32,3 +32,9 @@ Examples:
 	| karthik | 28  | 9098023842 | 
 	| ArCiGo | 27  | 8331215265 |
 	| ElCiGo | 25  | 111111 |
+
+Scenario: Check if I could get the details entered via Table from Extended Steps
+	When I fill all the mandatory details in form
+	| Name    | Age | Phone      | Email                 |
+	| Karthik | 28  | 1234567890 | acifuentes@luxoft.com |
+	Then I should get the same value from Extended Steps

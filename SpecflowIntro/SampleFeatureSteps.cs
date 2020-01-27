@@ -12,6 +12,13 @@ namespace SpecflowIntro
     [Binding]
     class SampleFeatureSteps
     {
+        public readonly EmployeeDetails empDetails;
+
+        public SampleFeatureSteps(EmployeeDetails empDetails)
+        {
+            this.empDetails = empDetails;
+        }
+
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int numbers)
         {
@@ -100,5 +107,20 @@ namespace SpecflowIntro
             Console.WriteLine(ScenarioContext.Current.Count);
             Console.WriteLine(ScenarioContext.Current.CurrentScenarioBlock);
         }
+
+        [When(@"I fill all the mandatory details in form")]
+        public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
+        {
+            var data = table.CreateDynamicSet();
+
+            foreach(var item in data)
+            {
+                empDetails.Age = (int)item.Age;
+                empDetails.Email = (string)item.Email;
+                empDetails.Name = (string)item.Name;
+                empDetails.Phone = (Int64)item.Phone;
+            }
+        }
+
     }
 }

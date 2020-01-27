@@ -223,6 +223,51 @@ this.CreateANewEmployeeWithMandatoryFieldsForDifferentIteration("ElCiGo", "25", 
 #line hidden
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Check if I could get the details entered via Table from Extended Steps", SourceLine=35)]
+        public virtual void CheckIfICouldGetTheDetailsEnteredViaTableFromExtendedSteps()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if I could get the details entered via Table from Extended Steps", null, ((string[])(null)));
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Age",
+                            "Phone",
+                            "Email"});
+                table2.AddRow(new string[] {
+                            "Karthik",
+                            "28",
+                            "1234567890",
+                            "acifuentes@luxoft.com"});
+#line 37
+ testRunner.When("I fill all the mandatory details in form", ((string)(null)), table2, "When ");
+#line hidden
+#line 40
+ testRunner.Then("I should get the same value from Extended Steps", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

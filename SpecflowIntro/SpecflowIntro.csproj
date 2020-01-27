@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeDetails.cs" />
+    <Compile Include="ExtendedSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleFeatureSteps.cs" />
     <Compile Include="TestFixture.cs" />
